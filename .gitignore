@@ -1,6 +1,11 @@
 # python
 __pycache__/
 
+# pyinstaller
+build/
+dist/
+# 
+
 # virtual environments
 venv/
 env/

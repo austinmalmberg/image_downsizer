@@ -61,7 +61,7 @@ def downsize_image(image_path: Path, max_size: Tuple[int, int], overwrite: bool 
 
     if output_format is None:
         # remove the first period from the suffix to conform with supported_image_formats
-        output_format = image_path.suffix.replace('.', '', 1)
+        output_format = image_path.suffix.replace('.', '', 1).lower()
 
     if output_format not in supported_image_formats:
         # ensure the output format is a supported image format

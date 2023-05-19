@@ -55,9 +55,11 @@ __NOTE:__ If python is not recognized, reference the full python path or add the
 (venv) image_downsizer> pyinstaller --hiddenimport PIL --onefile [--clean] image_downsizer.py
 ```
 
+Executable will be created at `dist/image_downsizer.exe`.
+
 ## Arguments
 
-Arguments must be provided to the executable in order for it to run.
+Arguments must be provided to the program or executable to run.
 
 ```
 > image_downsizer.exe -h
@@ -78,22 +80,15 @@ options:
                         file name.
   -f {jpg,jpeg,png,bmp}, --format {jpg,jpeg,png,bmp}
                         The output format of the downsized file. When not
-                        provided, uses the same image format as the original
+                        provided, uses the same image format as the original.
   -o OUTPUT_DIR, --output OUTPUT_DIR
                         The output directory for scaled down images. Defaults
-                        to the parent directory. NOTE: Original files may be
-                        overridden if the output file name and type matches
-                        that of the original.
-  --overwrite           Flag to overwrite the original image when its name
-                        matches the path of the new image. This would happen
-                        with no --append, --format, and --output arguments.
+                        to the parent directory.
+  --overwrite           Flag to overwrite any existing file at the
+                        destination. WARNING: This may or may not be the
+                        original image path!
   -s MAX_SIZE MAX_SIZE, --size MAX_SIZE MAX_SIZE
-                        Two arguments indicating the maximum width and height
-                        of the image. Images with dimensions less than these
-                        constraints will not be downsized. Defaults to 1920 x
-                        1080.
-
+                        The maximum width and height of the image. Images with
+                        dimensions less than these constraints will not be
+                        downsized. Defaults to 1920 x 1080.
 ```
-
-
-Executable will be created at `dist/image_downsizer.exe`.

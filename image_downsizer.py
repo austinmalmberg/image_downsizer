@@ -142,24 +142,23 @@ def _build_parser() -> ArgumentParser:
     parser.add_argument('-f', '--format',
                         choices=supported_image_formats,
                         dest='output_format',
-                        help='The output format of the downsized file. When not provided, uses the same image format as the original')
+                        help='The output format of the downsized file. When not provided, uses the same image format as the original.')
 
     parser.add_argument('-o', '--output',
                         dest='output_dir',
-                        help='The output directory for scaled down images. Defaults to the parent directory. NOTE: '
-                            'Original files may be overridden if the output file name and type matches that of the original.')
+                        help='The output directory for scaled down images. Defaults to the parent directory.')
 
     parser.add_argument('--overwrite',
                         action='store_true',
                         dest='overwrite',
-                        help='Flag to overwrite any existing file. WARNING: This may or may not be the original image!')
+                        help='Flag to overwrite any existing file at the destination. WARNING: This may or may not be the original image path!')
 
     parser.add_argument('-s', '--size',
                         nargs=2,
                         type=int,
                         default=(1920, 1080),
                         dest='max_size',
-                        help='The maximum width and height of the image. Images with dimensions less than these constraints'
+                        help='The maximum width and height of the image. Images with dimensions less than these constraints '
                             'will not be downsized. Defaults to 1920 x 1080.')
 
     return parser

@@ -152,8 +152,7 @@ def _build_parser() -> ArgumentParser:
     parser.add_argument('--overwrite',
                         action='store_true',
                         dest='overwrite',
-                        help='Flag to overwrite the original image when its name matches the path of the new image. '
-                            'This would happen with no --append, --format, or --output arguments.')
+                        help='Flag to overwrite any existing file. WARNING: This may or may not be the original image!')
 
     parser.add_argument('-s', '--size',
                         nargs=2,
